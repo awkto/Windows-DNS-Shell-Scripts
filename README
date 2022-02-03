@@ -1,0 +1,17 @@
+This script will start with a list of domains which must be placed in 'ad-domains.var' as a local file
+This script must be run via WSL or Cygwin. This is because it relies on both Bash binaries, as well as Windows binaries (dnscmd).
+
+This script will perform the following 3 loops
+- Fetch list of DCs for each AD domain
+- Fetch list of Conditional Forwarder zones for each AD domain (using a random DC)
+- Fetch list of Conditional Forwarder Targets for each CF zone
+
+Each of the above 3 steps aligns with a separate script in this repo. (loop1, loop2, loop3).
+The number next to the loop name indicates the order in which the scripts must be run.
+
+The scripts will also store their variables and outputs in local files that end with .mid
+This can be used for troubleshooting. Otherwise those files can be discarded after you have finished using the scripts
+
+The final output will have the file extension .out
+
+
